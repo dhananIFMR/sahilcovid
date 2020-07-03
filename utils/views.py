@@ -21,7 +21,7 @@ def make_jumbotron(link_text, link_href):
                         
                 
                 html.P("""
-               A new collaborative study by GAME and LEAD at Krea University seeks to capture the status of micro-enterprises in India during the COVID-19 crisis. Through a multidimensional survey of microbusinesses being conducted over six months (time period?), the study will capture key trends on the impact of the COVID crisis and government-mandated lockdowns on business livelihoods, employment, and the income of nano and microbusinesses.  Additionally, the survey will also provide reliable estimates on business and employment outcomes and gauge confidence levels of small businesses in the economy periodically.
+               A new collaborative study by GAME and LEAD at Krea University seeks to capture the status of micro-enterprises in India during the COVID-19 crisis. Through a multidimensional survey of microbusinesses being conducted over six months, the study will capture key trends on the impact of the COVID crisis and government-mandated lockdowns on business livelihoods, employment, and the income of nano and microbusinesses.  Additionally, the survey will also provide reliable estimates on business and employment outcomes and gauge confidence levels of small businesses in the economy periodically.
 .""",
                 className="lead"),
  html.Br(className=""),
