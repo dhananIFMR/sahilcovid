@@ -5,7 +5,7 @@ from dash_table.Format import Format, Scheme, Sign, Symbol
 summary_table = [
     {
         "question": "Gender",
-        "path": {"key": "Female", "meta": {"displayName": "Female-led [pct]"}},
+        "path": {"key": "Female", "meta": {"displayName": "Female-led %"}},
     },
     {
         "question": "Average no. of full-time employees before lockdown",
@@ -18,41 +18,41 @@ summary_table = [
     },
     {
         "question": "Business Registration",
-        "path": {"key": "Yes", "meta": {"displayName": "Registered Business [pct]"}},
+        "path": {"key": "Yes", "meta": {"displayName": "Registered Business %"}},
     },
     {
         "question": "Category of Business",
         "path": {
             "key": "Essential",
-            "meta": {"displayName": "Essential Business [pct]"},
+            "meta": {"displayName": "Essential Business %"},
         },
     },
     {
         "question": "Business Type",
         "path": {
             "key": "Fixed Store/ Shop",
-            "meta": {"displayName": "Fixed Store [pct]"},
+            "meta": {"displayName": "Fixed-store %"},
         },
     },
     {
         "question": "Business Type",
         "path": {
             "key": "Home based business",
-            "meta": {"displayName": "Home based business [pct]"},
+            "meta": {"displayName": " Home-based Business %"},
         },
     },
     {
         "question": "Business Type",
         "path": {
             "key": "Small manufacturing plant",
-            "meta": {"displayName": "Small manufacturing plant [pct]"},
+            "meta": {"displayName": "Small manufacturing plant %"},
         },
     },
     {
         "question": "Business Type",
         "path": {
             "key": "Village enterprise",
-            "meta": {"displayName": "Village enterprise [pct]"},
+            "meta": {"displayName": "Village enterprise %"},
         },
     },
 ]
@@ -101,21 +101,27 @@ def make_summary_table(responses, summary_table):
         ],
         data=summary_rows.to_dict("records"),
         style_header={
-            "backgroundColor": "white",
-            "fontWeight": "500",
-            "border-top": "0px solid #fff",
-            "border-right": "0px solid #fff",
-            "border-left": "0px solid #fff",
-            "border-bottom": "2px solid #0199D6",
+         "backgroundColor": "white",	
+            "fontWeight": "500",	
+            "border-top": "0px solid #fff",	
+            "border-right": "0px solid #fff",	
+            "border-left": "0px solid #fff",	
+            "border-bottom": "2px solid #0199D6",	
             "text-transform": "uppercase",
-        },
-        style_data_conditional=[
-            {"if": {"row_index": "odd"}, "backgroundColor": "rgb(248, 248, 248)"}
+        
+        
+        
+    },
+    
+    style_data_conditional=[	
+            {"if": {"row_index": "odd"}, "backgroundColor": "rgb(248, 248, 248)"}	
         ],
+
         style_cell={
             "textAlign": "left",
             "border-color": "#0199D6",
             "font-family": '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"',
         },
         style_cell_conditional=[{"if": {"column_id": "Region"}, "textAlign": "left"}],
+        
     )

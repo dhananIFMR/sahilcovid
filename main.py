@@ -14,6 +14,8 @@ import dash_bootstrap_components as dbc
 
 import flask
 
+
+
 from dash.dependencies import Input, Output
 
 from utils.data import read_data
@@ -21,11 +23,13 @@ from utils.summary_table import summary_table
 from utils.views import index, business, credit, household, employment, playground
 from utils.playground import make_charts_for_questions
 
+
 app = dash.Dash(
     __name__,
     external_stylesheets=[dbc.themes.BOOTSTRAP],
     suppress_callback_exceptions=True,
 )
+
 
 responses, question_labels = read_data()
 label_questions = {v: k for k, v in question_labels.items()}
@@ -93,26 +97,23 @@ def render_content(tab, state_filter, gender_filter, industry_filter, breakdown)
         label_questions,
     )
 
-
-static_image_route = "/assets/"
+static_image_route = "/assets/"	
 image_directory = "./assets"
-
 
 @app.server.route("{}<image_path>".format(static_image_route))
 def serve_image(image_path):
     return flask.send_from_directory(image_directory, image_path)
 
-
-@app.server.route("/download-data")
-def download_data():
-    with open("./assets/raw.csv", "r") as f:
-        csv = f.read()
-    return flask.Response(
-        csv,
-        mimetype="text/csv",
-        headers={"Content-disposition":
+@app.server.route("/download-data")	
+def download_data():	
+    with open("./assets/raw.csv", "r") as f:	
+        csv = f.read()	
+    return flask.Response(	
+        csv,	
+        mimetype="text/csv",	
+        headers={"Content-disposition":	
                  "attachment; filename=raw.csv"})
-
+                 
 
 if __name__ == "__main__":
-    app.run_server(port=8080, host="0.0.0.0")
+    app.run_server(port=8080, host="0.0.0.0", debug=True)

@@ -2,46 +2,44 @@ import dash_core_components as dcc
 import dash_html_components as html
 import dash_bootstrap_components as dbc
 
-colors = [
-    "#005DA6",
-    "#BAE1FF",
-    "#75C2FF",
-    "#31A4FF",
-    "#00467D",
-    "#002E53",
-    "#0199D6",
-    "#C4EEFF",
-    "#8ADDFE",
-    "#4FCCFE",
-    "#0173A0",
-    "#004D6B",
-    "#48C1E1",
-    "#DAF3F9",
-    "#B6E6F3",
-    "#91DAED",
-    "#1F9EBF",
-    "#156980",
-    "#CBC53E",
-    "#F5F3D8",
-    "#EAE8B2",
-    "#E0DC8B",
-    "#9D982A",
-    "#68651C",
-    "#FFC52F",
-    "#FFF3D5",
-    "#FFE8AC",
-    "#FFDC82",
-    "#E3A300",
-    "#976D00",
-    "#6D6E71",
-    "#E2E2E3",
-    "#C4C5C6",
-    "#A7A8AA",
-    "#525355",
-    "#363739",
+colors = [	
+    "#005DA6",	
+    "#BAE1FF",	
+    "#75C2FF",	
+    "#31A4FF",	
+    "#00467D",	
+    "#002E53",	
+    "#0199D6",	
+    "#C4EEFF",	
+    "#8ADDFE",	
+    "#4FCCFE",	
+    "#0173A0",	
+    "#004D6B",	
+    "#48C1E1",	
+    "#DAF3F9",	
+    "#B6E6F3",	
+    "#91DAED",	
+    "#1F9EBF",	
+    "#156980",	
+    "#CBC53E",	
+    "#F5F3D8",	
+    "#EAE8B2",	
+    "#E0DC8B",	
+    "#9D982A",	
+    "#68651C",	
+    "#FFC52F",	
+    "#FFF3D5",	
+    "#FFE8AC",	
+    "#FFDC82",	
+    "#E3A300",	
+    "#976D00",	
+    "#6D6E71",	
+    "#E2E2E3",	
+    "#C4C5C6",	
+    "#A7A8AA",	
+    "#525355",	
+    "#363739",	
 ]
-
-
 def make_playground_header(unique_states, unique_type_of_industry, unique_genders):
     return [
         dcc.Tabs(
@@ -126,7 +124,7 @@ def make_filters(unique_states, unique_type_of_industry, unique_genders):
                 )
             ),
         ],
-        className="filter-box",
+         className="filter-box",
     )
 
 
@@ -167,24 +165,26 @@ def make_charts_for_questions(
                     ][data[label].notna()][label].value_counts()
                     columns = list(freqs.index)
                     values = freqs.to_numpy()
-                    data_list.append(
-                        {
-                            "x": columns,
-                            "y": values,
-                            "type": "bar",
-                            "name": un,
-                            "marker": {"color": colors},
-                        }
+                    data_list.append(	
+                        {	
+                            "x": columns,	
+                            "y": values,	
+                            "type": "bar",	
+                            "name": un,	
+                            "marker": {"color": colors},	
+                        }	
                     )
                 fig = dcc.Graph(
-                    id=label,
+                    id=label,                   
                     figure={
                         "data": data_list,
                         "layout": {
                             "title": {"text": question},
                             "barmode": "group",
                             "yaxis": {"title": "Responses"},
+                         
                         },
+                        
                     },
                 )
                 children.append(dbc.Row(dbc.Col(children=[fig])))
@@ -193,7 +193,7 @@ def make_charts_for_questions(
                 columns = list(freqs.index)
                 values = freqs.to_numpy()
                 fig = dcc.Graph(
-                    id=label,
+                    id=label,                     
                     figure={
                         "data": [
                             {
