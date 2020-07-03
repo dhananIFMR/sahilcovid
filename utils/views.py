@@ -6,32 +6,51 @@ from utils.charts import make_question_pie, make_household_multi
 from utils.summary_table import make_summary_table
 from utils.playground import make_playground_header
 
-	
-def make_jumbotron(link_text, link_href):	
-    jumbotron = dbc.Jumbotron(	
-        [	
-            html.Div(	
-                children=[	
-                    html.Img(src="/assets/ifmr-logo.png", className="ifmrlogo"),	
-                    html.Img(src="/assets/game-logo.png", className="gamelogo"),	
-                ],	
-                className="head-box container",	
-            ),	
-            html.H2("COVID-19 Dashboard", className="app-header"),	
-            html.P(	
-                """	
-                    COVID-19 and the preventive measures for it such as the lockdown in	
-                    multiple countries has affected the economy worldwide.	
-                    In India, in particular, where microbusinesses form the foundation	
-                    of a significant amount of livelihoods and source of employment	
-                    the effects of the lockdown are significant.""",	
-                className="lead",	
-            ),	
-            html.Hr(className="my-2"),	
-            html.P(dcc.Link(link_text, href=link_href), className="lead"),	
-            html.P(html.A("Download the Dataset", href="/download-data"), className="lead"),	
-        ]	
-    )	
+
+def make_jumbotron(link_text, link_href):
+    jumbotron = dbc.Jumbotron(
+        [   html.Div( children=[
+                        html.Img(src="/assets/lead-logo-new.png" , className="ifmrlogo"),
+                        html.Img(src="/assets/game-logo.png" , className="gamelogo"),
+                    ],
+                    className="head-box container", ),
+                        html.Div( children=[
+                           html.H2("Impact of COVID-19 on Microenterprises in India", className="app-header"),
+                            html.Div( children=[
+                           html.H3("Introduction", className ="sub-head"),
+                        
+                
+                html.P("""
+               A new collaborative study by GAME and LEAD at Krea University seeks to capture the status of micro-enterprises in India during the COVID-19 crisis. Through a multidimensional survey of microbusinesses being conducted over six months (time period?), the study will capture key trends on the impact of the COVID crisis and government-mandated lockdowns on business livelihoods, employment, and the income of nano and microbusinesses.  Additionally, the survey will also provide reliable estimates on business and employment outcomes and gauge confidence levels of small businesses in the economy periodically.
+.""",
+                className="lead"),
+ html.Br(className=""),
+                html.P(""" This dashboard presents results from the ongoing survey and allows visitors to explore and visualise the data.""",
+                className="lead"),
+               
+                  
+                       ],
+                        className="desbox"
+                        ),
+                           
+                            html.Div( children=[
+ html.H3("Survey Methodology", className ="sub-headrgt"),
+                  html.P("""
+                    Our stratified, convenience sample was drawn from various sub-industries in manufacturing, services and trade to provide a sectoral representation of microbusinesses. The sample was selected from lists provided by partner organizations. The following regions and states will be covered in the survey: North India (Delhi, Haryana, Punjab, Uttar Pradesh), South India (Tamil Nadu), West India (Gujarat, Maharashtra, Rajasthan). The surveys were conducted telephonically in the area’s local language, and each survey took 18-25 minutes to administer .""",
+                className="leadrgt"),
+
+                        ],
+                        className="desbox"
+                        ),
+
+                        ],
+                        className="head-text"
+                        ),
+            html.Hr(className="my-2"),
+            html.P(dcc.Link(link_text, href=link_href), className="lead"),
+            html.P(html.A("Download the Dataset", href="/download-data"), className="lead"),
+        ]
+    )
     return jumbotron
 
 
