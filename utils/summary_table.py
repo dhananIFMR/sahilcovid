@@ -38,7 +38,7 @@ summary_table = [
         "question": "Business Type",
         "path": {
             "key": "Home based business",
-            "meta": {"displayName": "Home-based business %"},
+            "meta": {"displayName": " Home-based Business %"},
         },
     },
     {
@@ -101,21 +101,31 @@ def make_summary_table(responses, summary_table):
         ],
         data=summary_rows.to_dict("records"),
         style_header={
-            "backgroundColor": "white",
-            "fontWeight": "500",
-            "border-top": "0px solid #fff",
-            "border-right": "0px solid #fff",
-            "border-left": "0px solid #fff",
-            "border-bottom": "2px solid #0199D6",
-            "text-transform": "uppercase",
+        'backgroundColor': 'white',
+        'fontWeight': '500',
+        'border-top': '0px solid #fff',
+        'border-right': '0px solid #fff',
+        'border-left': '0px solid #fff',
+        'border-bottom': '2px solid #0199D6',
+        'text-transform' : 'uppercase',
+        
+        
+        
+    },
+    
+    style_data_conditional=[
+        {
+            'if': {'row_index': 'odd'},
+            'backgroundColor': 'rgb(248, 248, 248)'
         },
-        style_data_conditional=[
-            {"if": {"row_index": "odd"}, "backgroundColor": "rgb(248, 248, 248)"}
-        ],
+       
+    ],
+
         style_cell={
             "textAlign": "left",
-            "border-color": "#0199D6",
+            "border-color" : "#0199D6",
             "font-family": '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"',
         },
         style_cell_conditional=[{"if": {"column_id": "Region"}, "textAlign": "left"}],
+        
     )

@@ -1,8 +1,6 @@
-
 # covid-dashboard
 
-Demo: `https://sz-test-279001.uc.r.appspot.com`
-demo link 2: https://covid-dash-2.el.r.appspot.com/
+Demo Link: `https://sz-test-279001.uc.r.appspot.com`
 
 ## Running the code
 
@@ -10,15 +8,6 @@ demo link 2: https://covid-dash-2.el.r.appspot.com/
 2. Install the dependencies using `pip install -r requirements.txt`
 3. Run the program using `python3 main.py`
 4. Visit the page in your browser at `127.0.0.1:8080`
-
-## Deploying the code
-
-This code is currently deployed using google app engine. First, make sure you install the [google cloud sdk](https://cloud.google.com/appengine/docs/standard/python3/setting-up-environment).
-
-Once you have that configured, download the code in this repository. You can make changes to the code and then deploy them by using the command: `gcloud app deploy` in this directory.
-
-You should make sure the code is checked in and saved in github.
-
 
 ## Overview
 

@@ -30,7 +30,7 @@ def has_numbers(data):
 
 def read_data():
 
-    with open("./assets/Sector-based Summary.json", "r") as f:
+    with open("./static/data/Sector-based Summary.json", "r") as f:
         raw_data = json.load(f)
 
     sheet_data = defaultdict(dict)
